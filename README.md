@@ -30,6 +30,57 @@ certutil -scinfo
 
 </details>
 
+<details>
+<summary>Common Access Card (CAC) / Smartcard</summary>
+
+#### 1. Install required packages
+```bash
+sudo pacman -Sy ccid opensc --noconfirm
+```
+
+#### 2. Enable & start the PC/SC Smart Card Daemon
+```bash
+sudo systemctl enable --now pcscd.socket
+```
+
+#### 3. Load security device
+- Navigate to Settings > Privacy & Security > Security Devices and click "Load" to load a module using:
+```bash
+/usr/lib/opensc-pkcs11.so
+```
+![image](https://github.com/user-attachments/assets/fefb339c-7ff5-49f8-bfee-8e0908f2cbf1)
+
+---
+
+#### Automated CLI - Load security device
+- Flatpak Install
+```bash
+modutil -dbdir "$HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*/cert9.db" -add "CAC Module" -libfile "/usr/lib/opensc-pkcs11.so"
+```
+- System Install
+```bash
+modutil -dbdir "$HOME/.mozilla/firefox/*/cert9.db" -add "CAC Module" -libfile "/usr/lib/opensc-pkcs11.so"
+```
+
+#### List available PKCS #11 Modules
+```bash
+modutil -dbdir sql:.pki/nssdb/ -list
+```
+
+#### Add custom "CAC Module" to PKCS #11 Module
+```bash
+modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
+```
+
+#### References:
+- [Common Access Card](https://wiki.archlinux.org/title/Common_Access_Card)
+- [militarycac.com](https://militarycac.com/linux.htm)
+- [dod-cac-ubuntu-linuxmint](https://cubiclenate.com/linux/applications/utilities/dod-cac-ubuntu-linuxmint/)
+- [cac-scripts](https://github.com/csmig/cac-scripts)
+- [linux_cac](https://github.com/jdjaxon/linux_cac)
+
+</details>
+
 ---
 
 #### A365 Webapps
