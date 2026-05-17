@@ -10,27 +10,6 @@
 - [Web client (*Direct*)](https://client.wvd.azure.us/arm/webclient/index.html) or [(*Redirect*)](https://aka.ms/AVDGov) | [*Azure environments*](https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/connect-windows-cloud-services?tabs=web#tabpanel_2_web) | [*MilitaryCAC: AVD*](https://militarycac.com/avd.htm)
 
 <details>
-<summary>Linux: FreeRDP - Setup Guide</summary>
-
-## Install package
-```sh
-sudo pacman -S freerdp --noconfirm
-```
-
-## FreeRDP command
-```sh
-xfreerdp3 "Army Desktop.rdpw" /cert:ignore /smartcard +clipboard /azure:ad:login.microsoftonline.us,tenantid:common,avd-access:https%%3A%%2F%%2Flogin.microsoftonline.com%%2Fcommon%%2Foauth2%%2Fnativeclient
-```
-- To obtain the `Army Desktop.rdpw` file you need to use the [Web client](https://client.wvd.azure.us/arm/webclient/index.html). Once logged in, you'll see a `⚙️` icon- select that icon and modify the *Resources Launch Method* from `Open resources in the browser` to `Download the rdp file`. Now select either the Arizona or Virginia `Army Desktop` tile/button.
-
-## Certificate Propagation?
-```bat
-certutil -scinfo
-```
-
-</details>
-
-<details>
 <summary>Linux: CAC/Smartcard - Setup Guide</summary>
 
 #### 1. Install required packages
@@ -78,6 +57,27 @@ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11
 - [dod-cac-ubuntu-linuxmint](https://cubiclenate.com/linux/applications/utilities/dod-cac-ubuntu-linuxmint/)
 - [cac-scripts](https://github.com/csmig/cac-scripts)
 - [linux_cac](https://github.com/jdjaxon/linux_cac)
+
+</details>
+
+<details>
+<summary>Linux: FreeRDP - Setup Guide</summary>
+
+## Install package
+```sh
+sudo pacman -S freerdp --noconfirm
+```
+
+## FreeRDP command
+```sh
+xfreerdp3 "Army Desktop.rdpw" /cert:ignore /smartcard +clipboard /azure:ad:login.microsoftonline.us,tenantid:common,avd-access:https%%3A%%2F%%2Flogin.microsoftonline.com%%2Fcommon%%2Foauth2%%2Fnativeclient
+```
+- To obtain the `Army Desktop.rdpw` file you need to use the [Web client](https://client.wvd.azure.us/arm/webclient/index.html). Once logged in, you'll see a `⚙️` icon- select that icon and modify the *Resources Launch Method* from `Open resources in the browser` to `Download the rdp file`. Now select either the Arizona or Virginia `Army Desktop` tile/button.
+
+## Certificate Propagation?
+```bat
+certutil -scinfo
+```
 
 </details>
 
