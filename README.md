@@ -10,7 +10,7 @@
 - [Web client (*Direct*)](https://client.wvd.azure.us/arm/webclient/index.html) or [(*Redirect*)](https://aka.ms/AVDGov) | [*Azure environments*](https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/connect-windows-cloud-services?tabs=web#tabpanel_2_web) | [*MilitaryCAC: AVD*](https://militarycac.com/avd.htm)
 
 <details>
-<summary>Linux: CAC/Smartcard - Setup Guide</summary>
+<summary>Arch Linux: CAC/Smartcard - Setup Guide</summary>
 
 #### 1. Install required packages
 ```bash
@@ -61,7 +61,7 @@ modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11
 </details>
 
 <details>
-<summary>Linux: FreeRDP - Setup Guide</summary>
+<summary>Arch Linux: FreeRDP - Setup Guide</summary>
 
 ## Install package
 ```sh
