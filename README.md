@@ -102,6 +102,7 @@ certutil -scinfo
   - [Defense Travel System (DTS)](https://dtsproweb.defensetravel.osd.mil/dts-app/pubsite/all/view)
   - [Army Training and Certification Tracking System (ATCTS)](https://atcts.army.mil/)
   - [Medical Operational Data System (MODS)](https://www.mods.army.mil/MODSHome)
+    - [Medical Health Assessments](https://rc.mods.army.mil/MHA/pdha/DHADeploymentCheck.aspx)
   - [Servicemembers Civil Relief Act (SCRA)](https://www.militaryonesource.mil/financial-legal/personal-finance/servicemembers-civil-relief-act/)
 
 ---
