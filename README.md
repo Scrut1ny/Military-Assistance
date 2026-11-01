@@ -22,33 +22,15 @@ sudo pacman -Sy ccid opensc --noconfirm
 sudo systemctl enable --now pcscd.socket
 ```
 
-#### 3. Load security device
-- Navigate to Settings > Privacy & Security > Security Devices and click "Load" to load a module using:
-```bash
-/usr/lib/opensc-pkcs11.so
-```
-![image](https://github.com/user-attachments/assets/fefb339c-7ff5-49f8-bfee-8e0908f2cbf1)
+#### 3. Register the OpenSC PKCS#11 module
 
----
-
-#### Automated CLI - Load security device
-- Flatpak Install
+- System (Firefox - Default Profile)
 ```bash
-modutil -dbdir "$HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*/cert9.db" -add "CAC Module" -libfile "/usr/lib/opensc-pkcs11.so"
+modutil -dbdir $HOME/.config/mozilla/firefox/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
-- System Install
+- Flatpak (Librewolf - Default Profile)
 ```bash
-modutil -dbdir "$HOME/.mozilla/firefox/*/cert9.db" -add "CAC Module" -libfile "/usr/lib/opensc-pkcs11.so"
-```
-
-#### List available PKCS #11 Modules
-```bash
-modutil -dbdir sql:.pki/nssdb/ -list
-```
-
-#### Add custom "CAC Module" to PKCS #11 Module
-```bash
-modutil -dbdir sql:.pki/nssdb/ -add "CAC Module" -libfile /usr/lib/opensc-pkcs11.so
+modutil -dbdir $HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
 
 #### References:
