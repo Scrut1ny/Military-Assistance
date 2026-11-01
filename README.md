@@ -10,20 +10,20 @@
 - [Web client (*Direct*)](https://client.wvd.azure.us/arm/webclient/index.html) or [(*Redirect*)](https://aka.ms/AVDGov) | [*Azure environments*](https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/connect-windows-cloud-services?tabs=web#tabpanel_2_web) | [*MilitaryCAC: AVD*](https://militarycac.com/avd.htm)
 
 <details>
-<summary>Arch Linux: CAC/Smartcard - Setup Guide</summary>
+<summary>Arch Linux: Smart Card - Setup Guide</summary>
 
-#### 1. Install required packages
+---
+
+1. Install required packages
 ```bash
 sudo pacman -Sy ccid opensc --noconfirm
 ```
-
-#### 2. Enable & start the PC/SC Smart Card Daemon
+2. Enable & start the PC/SC Smart Card Daemon
 ```bash
 sudo systemctl enable --now pcscd.socket
 ```
 
-#### 3. Register the OpenSC PKCS#11 module
-
+### Register the OpenSC PKCS#11 module
 - System (Firefox - Default Profile)
 ```bash
 modutil -dbdir $HOME/.config/mozilla/firefox/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
@@ -33,12 +33,74 @@ modutil -dbdir $HOME/.config/mozilla/firefox/*.default-release -add OpenSC -libf
 modutil -dbdir $HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
 
+### Miscellaneous
+
+<details>
+<summary>Firefox Mitmproxy Setup (Default Profile)</summary>
+
+
+#### 1. Install mitmproxy
+```bash
+sudo pacman -S mitmproxy --noconfirm
+```
+
+#### 2. Generate the mitmproxy root CA (first run creates ~/.mitmproxy/)
+```bash
+mitmdump   # Ctrl+C once it starts; the CA is already written
+```
+
+#### 3. Import the mitmproxy CA into Firefox's NSS certificate store (trusted TLS CA)
+```bash
+certutil -A -n mitmproxy -t "C,," -i ~/.mitmproxy/mitmproxy-ca-cert.cer -d $HOME/.config/mozilla/firefox/*.default-release </dev/null
+```
+
+#### 4. Configure manual HTTP/HTTPS proxy (127.0.0.1:8080) via user.js
+```bash
+cat >> $HOME/.config/mozilla/firefox/*.default-release/user.js <<'EOF'
+user_pref("network.proxy.type", 1);
+user_pref("network.proxy.http", "127.0.0.1");
+user_pref("network.proxy.http_port", 8080);
+user_pref("network.proxy.ssl", "127.0.0.1");
+user_pref("network.proxy.ssl_port", 8080);
+user_pref("network.proxy.share_proxy_settings", true);
+EOF
+```
+
+---
+
+#### 1. Remove the manual proxy configuration (user.js + prefs.js)
+```bash
+# Exit Firefox first; it rewrites prefs.js on quit and would undo this
+sed -i '/^user_pref("network\.proxy\.\(type\|http\|http_port\|ssl\|ssl_port\|share_proxy_settings\)",/d' \
+  $HOME/.config/mozilla/firefox/*.default-release/user.js \
+  $HOME/.config/mozilla/firefox/*.default-release/prefs.js
+```
+
+2. Remove the mitmproxy CA from Firefox's NSS certificate store
+```bash
+certutil -D -n mitmproxy -d $HOME/.config/mozilla/firefox/*.default-release </dev/null
+```
+
+3. Delete the mitmproxy CA and config directory
+```bash
+rm -rf ~/.mitmproxy
+```
+
+4. Uninstall mitmproxy
+```bash
+sudo pacman -Rns mitmproxy
+```
+
+</details>
+
 #### References:
 - [Common Access Card](https://wiki.archlinux.org/title/Common_Access_Card)
 - [militarycac.com](https://militarycac.com/linux.htm)
 - [dod-cac-ubuntu-linuxmint](https://cubiclenate.com/linux/applications/utilities/dod-cac-ubuntu-linuxmint/)
 - [cac-scripts](https://github.com/csmig/cac-scripts)
 - [linux_cac](https://github.com/jdjaxon/linux_cac)
+
+---
 
 </details>
 
