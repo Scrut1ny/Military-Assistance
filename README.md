@@ -200,6 +200,10 @@ certutil -scinfo
 # Armed Services Vocational Aptitude Battery (ASVAB)
 
 - [ASVAB Scores and Army Jobs](https://www.military.com/join-armed-forces/asvab/asvab-and-army-jobs.html)
+- [ASVAB Scores and Marine Corps Jobs](https://www.military.com/join-armed-forces/asvab/asvab-and-marine-corps-jobs.html)
+- [ASVAB Scores and Navy Jobs](https://www.military.com/join-armed-forces/asvab-and-navy-mos-jobs.html)
+- [ASVAB Scores and Air Force Jobs](https://www.military.com/join-armed-forces/asvab/asvab-and-air-force-jobs.html)
+- [ASVAB Scores and Space Force Jobs](https://www.military.com/asvab/asvab-scores-and-space-force-jobs)
 
 ## AFQT Scores and Trainability
 
