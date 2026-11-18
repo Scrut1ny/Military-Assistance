@@ -1,3 +1,13 @@
+## Userscript Manager
+
+- Violentmonkey ([GitHub](https://github.com/Violentmonkey/Violentmonkey))
+	- [Firefox](https://addons.mozilla.org/en-US/firefox/addon/violentmonkey/)
+ 	- [Chrome](https://chromewebstore.google.com/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag)
+	- [Edge](https://microsoftedge.microsoft.com/addons/detail/violentmonkey/eeagobfjdenkkddmbclomhiblgggliao)
+
+--- 
+
+
 ## [ATIS LEARNING](https://learn.atis.army.mil/moodle/course/)
 
 <details>
