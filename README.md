@@ -25,11 +25,13 @@ sudo systemctl enable --now pcscd.socket
 ```
 
 ### Register the OpenSC PKCS#11 module
-- System (Firefox - Default Profile)
+
+- Firefox (System | Default Profile)
 ```bash
 modutil -dbdir $HOME/.config/mozilla/firefox/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
-- Flatpak (Librewolf - Default Profile)
+
+- Librewolf (Flatpak | Default Profile)
 ```bash
 modutil -dbdir $HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
