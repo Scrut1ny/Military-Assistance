@@ -10,15 +10,16 @@
 - [Web client (*Direct*)](https://client.wvd.azure.us/arm/webclient/index.html) or [(*Redirect*)](https://aka.ms/AVDGov) | [*Azure environments*](https://learn.microsoft.com/en-us/previous-versions/remote-desktop-client/connect-windows-cloud-services?tabs=web#tabpanel_2_web) | [*MilitaryCAC: AVD*](https://militarycac.com/avd.htm)
 
 <details>
-<summary>Arch Linux: Smart Card - Setup Guide</summary>
+<summary>OpenSC setup guide (Arch Linux)</summary>
 
 ---
 
-1. Install required packages
+1. Install the required packages
 ```bash
 sudo pacman -Sy ccid opensc --noconfirm
 ```
-2. Enable & start the PC/SC Smart Card Daemon
+
+2. Enable and start the PC/SC daemon
 ```bash
 sudo systemctl enable --now pcscd.socket
 ```
@@ -105,7 +106,7 @@ sudo pacman -Rns mitmproxy
 </details>
 
 <details>
-<summary>Arch Linux: FreeRDP - Setup Guide</summary>
+<summary>FreeRDP setup guide (Arch Linux)</summary>
 
 ## Install package
 ```sh
