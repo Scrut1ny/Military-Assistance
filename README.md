@@ -187,7 +187,7 @@ certutil -scinfo
   - [ArmyIgnitED](https://armyignited.cce.af.mil/student/account/login)
     - Missing an account/can't login?
       - Email ```info@intellectualpoint.com``` or call ```703-554-3827``` that you're missing an armyignited account, and can't login with your CAC. (Make sure to mention your full name, rank, DoDID, etc.)
-  - [Joint Services Transcript (JST)](https://jst.doded.mil/jst/)
+  - [Joint Services Transcript (JST)](https://jst.doded.mil/jst/auth/)
     - Make sure to utilize/send your JST transcript for college credits!
   - [Army COOL](https://www.cool.osd.mil/army/index.html)
   - [GenAI](https://gemini.genai.mil/)
