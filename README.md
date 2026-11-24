@@ -1,5 +1,9 @@
 #### General
 - [Army Links](https://armylinks.com/)
+- Networks
+  - 🟢 = NIPRNet (Unclassified)
+  - 🔴 = SIPRNet (Classified)
+  - 🟡 = JWICS (Top Secret)
 
 ---
 
@@ -131,16 +135,18 @@ certutil -scinfo
 ---
 
 #### A365 Webapps
-  - [Office Home](https://www.ohome.apps.mil/)
-  - [Teams](https://dod.teams.microsoft.us/v2/)
-  - [Outlook](https://webmail.apps.mil/mail/inbox)
-  - [Excel](https://www.ohome.apps.mil/launch/excel?auth=2&username=.mil@army.mil)
+  - [Office Home](https://www.ohome.apps.mil/) - 🟢
+  - [Teams](https://dod.teams.microsoft.us/v2/) - 🟢
+  - [Outlook](https://webmail.apps.mil/mail/inbox) - 🟢
+  - [Excel](https://www.ohome.apps.mil/launch/excel?auth=2&username=.mil@army.mil) - 🟢
 
 ---
 
 #### Personal
   - [iPERMS RMA](https://iperms.hrc.army.mil/)
   - [IPPS-A](https://ipps-a.army.mil/)
+    - [Self-Service User Login](https://my.ippsa.army.mil/)
+    - [Elevated User Login](https://hr.ippsa.army.mil/) - 🟢
   - [Soldier Equipping & Asset Management (SEAM)](https://tacom.army.mil/seam)
     - Missing Gear? Utilize these instead of getting a statement of charges!
       - [Venture Surplus](https://www.venturesurplus.com/shop/)
@@ -168,7 +174,7 @@ certutil -scinfo
 
 ---
 
-#### Deployment/Mobilization (*NIPR Required*)
+#### Deployment/Mobilization (*`NIPRnet` only*)
 
 - [Tour of Duty](https://mobcop.aoc.army.pentagon.mil/)
 
