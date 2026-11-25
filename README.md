@@ -37,7 +37,7 @@ modutil -dbdir $HOME/.config/mozilla/firefox/*.default-release -add OpenSC -libf
 
 - Librewolf (Flatpak | Default Profile)
 ```bash
-modutil -dbdir $HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*.default-release -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
+modutil -dbdir $HOME/.var/app/io.gitlab.librewolf-community/.librewolf/*.default-default -add OpenSC -libfile /usr/lib/opensc-pkcs11.so </dev/null
 ```
 
 ### Miscellaneous
