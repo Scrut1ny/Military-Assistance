@@ -174,9 +174,9 @@ certutil -scinfo
 
 ---
 
-#### Deployment/Mobilization (*`NIPRnet` only*)
+#### Deployment/Mobilization
 
-- [Tour of Duty](https://mobcop.aoc.army.pentagon.mil/)
+- [Tour of Duty](https://mobcop.aoc.army.pentagon.mil/) - 🟢
 
 ---
 
@@ -199,7 +199,7 @@ certutil -scinfo
   - [Joint Services Transcript (JST)](https://jst.doded.mil/jst/auth/)
     - Make sure to utilize/send your JST transcript for college credits!
   - [Army COOL](https://www.cool.osd.mil/army/index.html)
-  - [GenAI](https://gemini.genai.mil/)
+  - [GenAI](https://gemini.genai.mil/) - 🟢
 
 ---
 
